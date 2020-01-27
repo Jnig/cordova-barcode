@@ -29,6 +29,12 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
 
+
+    },
+
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+
    cordova.plugins.barcodeScanner.scan(
       function (result) {
           alert("We got a barcode\n" +
@@ -54,10 +60,7 @@ var app = {
       }
    );
 
-    },
 
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
